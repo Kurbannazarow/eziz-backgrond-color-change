@@ -21,3 +21,26 @@ const arrColor = [
   '#f8f9fa',
   '#343a40'
 ]
+
+
+function changeColorFunc() {
+  const mainBg = document.querySelector('.main__bg')
+  const clickBg = document.querySelector('.bg__click')
+  const colorInput = document.querySelector('#color')
+
+  clickBg.addEventListener('click', changeColor)
+  colorInput.addEventListener('change', changeColorInput)
+
+  function changeColor(elem) {
+    elem.preventDefault()
+    const count = Math.trunc(Math.random()*arrColor.length)
+    mainBg.style.backgroundColor = arrColor[count]
+  }
+  
+  function changeColorInput(elem) {
+    elem.preventDefault()
+    mainBg.style.backgroundColor = this.value
+  }
+}
+
+changeColorFunc()
