@@ -27,6 +27,7 @@ function changeColorFunc() {
   const mainBg = document.querySelector('.main__bg')
   const clickBg = document.querySelector('.bg__click')
   const colorInput = document.querySelector('#color')
+  const heh = document.querySelector('.heh')
 
   clickBg.addEventListener('click', changeColor)
   colorInput.addEventListener('change', changeColorInput)
@@ -40,6 +41,7 @@ function changeColorFunc() {
   function changeColorInput(elem) {
     elem.preventDefault()
     mainBg.style.backgroundColor = this.value
+    heh.textContent = `HEX COLOR: ${this.value}`
   }
 }
 
